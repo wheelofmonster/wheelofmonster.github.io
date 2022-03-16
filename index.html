@@ -23,29 +23,90 @@
 </div>
 <br/>
 <br/>
-<div class="container">
+<div class="container" id="checkcont">
+
+	</div>
+<br/>
+<br/>
+<div id="maincont" class="container">
 	<div id="monster">
 Monster
+	</div>
+	<div id="type">
+		Type
 	</div>
 </div>
 
 	<script>
 
+$(document).ready(function(){
+	for(at in ALLTYPES){
+		t = ALLTYPES[at];
+		$('#checkcont').append(
+        $(document.createElement('label')).prop({
+            for: t
+        }).html(t)
+        ).append(
+	        $(document.createElement('input')).prop({
+	            id: t,
+	            name: 'choosetype',
+	            value: t,
+	            type: 'checkbox',
+	            checked: true
+	        })).append(document.createElement('hr'));
+        // console.log(t)
+    }
+});
+
 
 var blinkcount = 0;
 var BLINK_INTERVAL = 100;
 var BLINK_CAP = 4000;
+var NEW_MONSTERS = [];
+
+function BuildMonsters(){
+	NEW_MONSTERS = [];
+	var checkedlist = []
+	for(at in ALLTYPES){
+		var t = ALLTYPES[at];
+		// console.log(t);
+		// console.log($('#'+t).prop('checked'));
+		if($('#'+t).prop('checked')){
+			checkedlist.push(t);
+		}
+	}
+	for (my in MONSTERS){
+		var monster = MONSTERS[my];
+		for (ty in monster[1]){
+			var tyty = monster[1][ty];
+			if (checkedlist.includes(tyty)){
+				NEW_MONSTERS.push(monster);
+				// console.log("Added "+monster);
+				break;
+			}
+		}
+	}
+}
+
+function GetRandom(){
+	return NEW_MONSTERS[Math.floor(Math.random()*NEW_MONSTERS.length)];
+}
 
 function randomize(){
-	$('#monster').html(MONSTERS[Math.floor(Math.random()*MONSTERS.length)]);
+	var m = GetRandom();
+	$('#monster').html(m[0]);
+	$('#type').html(m[1].join(", "));
 }
 function final_choice(){
-	$('#monster').html(MONSTERS[Math.floor(Math.random()*MONSTERS.length)]);
+	var m = GetRandom();
+	$('#monster').html(m[0]);
+	$('#type').html(m[1].join(", "));
 	$('#monster').css({"background-color": "#FFFF00", "font-weight": "bold"});
 	blinkcount = 0;
 }
 
 $('#button').click(function(){
+	BuildMonsters();
 	$('#monster').css({"background-color": "#FFF", "font-weight": "normal"});
 
 const interv = setInterval(function() {

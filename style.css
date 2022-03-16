@@ -14,6 +14,8 @@ h3 {
 
 .container {
 	text-align:  center;
+/*		border:  3px solid black;
+*/
 }
 
 #button{
@@ -21,19 +23,61 @@ h3 {
 	cursor:  pointer;
 }
 
-#monster{
-	font-size:  40px;
-	font-family:  "Courier New";
-	border:  3px solid black;
-	padding:  3px;
+#checkcont{
+			border:  3px solid black;
+			padding:  3px;
 	padding-top:  8px;
 	padding-bottom:  8px;
 	min-width: 20%;
-	max-width: 50%;
-	 position: fixed;
+	max-width: 25%;
+	 position: relative;
     /* center the element */
     right: 0;
     left: 0;
     margin-right: auto;
     margin-left: auto;
+}
+
+#maincont{
+		border:  3px solid black;
+		padding:  3px;
+	padding-top:  8px;
+	padding-bottom:  8px;
+	min-width: 20%;
+	max-width: 50%;
+	 position: relative;
+    /* center the element */
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#monster{
+	font-size:  40px;
+	font-family:  "Courier New";
+	padding-bottom:  5px;
+	/*padding:  3px;
+	padding-top:  8px;
+	padding-bottom:  8px;
+	min-width: 20%;
+	max-width: 50%;
+	 position: relative;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;*/
+}
+
+#type{
+	font-size:  25px;
+	font-family:  "Courier New";
+	font-style: italic;
+}
+
+
+
+label{
+	font-size:  15px;
+	font-family:  "Courier New";
 }
