@@ -1,5 +1,6 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="monsters.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,28 +31,32 @@ Monster
 
 	<script>
 
-function readTextFile(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                return(allText);
-            }
-        }
-    }
-    rawFile.send(null);
+
+var blinkcount = 0;
+var BLINK_INTERVAL = 100;
+var BLINK_CAP = 4000;
+
+function randomize(){
+	$('#monster').html(MONSTERS[Math.floor(Math.random()*MONSTERS.length)]);
+}
+function final_choice(){
+	$('#monster').html(MONSTERS[Math.floor(Math.random()*MONSTERS.length)]);
+	$('#monster').css({"background-color": "#FFFF00", "font-weight": "bold"});
+	blinkcount = 0;
 }
 
-var doodoo = readTextFile("monsters.txt");
+$('#button').click(function(){
+	$('#monster').css({"background-color": "#FFF", "font-weight": "normal"});
 
-$('#monster').val(doodoo);
-
+const interv = setInterval(function() {
+    randomize();
+    blinkcount+=BLINK_INTERVAL;
+    if(blinkcount>BLINK_CAP){
+    	clearInterval(interv);
+    	final_choice();
+    } 
+}, BLINK_INTERVAL);
+});
 
 	</script>
 

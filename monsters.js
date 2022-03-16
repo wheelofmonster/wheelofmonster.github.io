@@ -1,0 +1,1 @@
+var MONSTERS = ['Frankenstein', 'Dracula', 'Mummy', 'Invisible Man', 'Wolf Man', 'Phantom of the Opera', 'Count Orlok', 'Beast-Men (Island of Dr Moreau)', 'King Kong', 'Son of Kong', 'Bride of Frankenstein', 'Flying Monkeys'];
