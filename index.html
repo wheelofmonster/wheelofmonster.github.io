@@ -39,8 +39,13 @@ Monster
 	<script>
 
 $(document).ready(function(){
+	var perLine = 1;
 	for(at in ALLTYPES){
 		t = ALLTYPES[at];
+		console.log("t is "+t+" and perLine is"+perLine);
+		// if (perLine==5){
+			// .append(document.createElement('br'));
+		// }
 		$('#checkcont').append(
         $(document.createElement('label')).prop({
             for: t
@@ -48,13 +53,26 @@ $(document).ready(function(){
         ).append(
 	        $(document.createElement('input')).prop({
 	            id: t,
+	            class: 'checky',
 	            name: 'choosetype',
 	            value: t,
 	            type: 'checkbox',
 	            checked: true
 	        }));
-        if (at!=ALLTYPES.length-1)
+        if (perLine<3){
         	$('#checkcont').append($(document.createElement('div')).prop("class","verticalLine"));
+        	perLine++;
+        }else{
+        	if (at!=ALLTYPES.length-1){	
+        		$('#checkcont').append($(document.createElement('div')).prop("class","break"));
+        	}
+        	perLine=1;
+        }
+        // if(perLine==5){
+        // 	perLine=1;
+        // }else{
+        // 	perLine++;
+        // }
         // console.log(t)
     }
 });

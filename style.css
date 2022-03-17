@@ -31,14 +31,15 @@ h3 {
 
 #checkcont{
 			border:  3px solid black;
-			padding:  3px;
-	padding-top:  8px;
-	padding-bottom:  8px;
-	padding-left: 30px;
-	padding-right: 30px;
+			/*padding:  3px;*/
+	/*padding-top:  8px;*/
+	/*padding-bottom:  8px;*/
+	/*padding-left: 30px;*/
+	/*padding-right: 30px;*/
 	/*min-width: 20%;
 	max-width: 25%;*/
-	width: fit-content;
+	/*width: fit-content;*/
+	max-width: 40%;
 	 position: relative;
     /* center the element */
     right: 0;
@@ -46,6 +47,10 @@ h3 {
     margin-right: auto;
     margin-left: auto;
     display: flex;
+    flex-wrap: wrap;
+    /*text-align: center;*/
+    /*align-items: center;*/
+    justify-content: center;
 }
 
 #maincont{
@@ -89,7 +94,7 @@ h3 {
 }
 
 .verticalLine {
-  border-left: thick solid #000;
+  border-left: 2px solid #000;
   margin-left: 6px;
   margin-right: 6px;
   /*width:  2px;*/
@@ -99,9 +104,18 @@ h3 {
   /*height: 32px;*/
 }
 
+.break{
+	flex-basis: 100%;
+	border-top: 2px solid #000;
+	/*height: 2px;*/
+}
 
+.checky{
+	margin-top: 7px;
+}
 
 label{
 	font-size:  15px;
 	font-family:  "Courier New";
+	padding: 5px;
 }
