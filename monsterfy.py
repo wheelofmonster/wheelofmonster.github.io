@@ -11,6 +11,8 @@ typeslist = []
 typeslist_pretty = []
 # prettified
 
+typescount = {}
+
 with open('monsters.csv', newline='') as csvfile:
 		mreader = csv.reader(csvfile, delimiter=',', quotechar='|')
 		skip = True
@@ -26,6 +28,8 @@ with open('monsters.csv', newline='') as csvfile:
 					if t not in typeslist:
 						typeslist.append(t)
 						typeslist_pretty.append('"'+t+'"')
+						typescount[t] = 0
+					typescount[t] += 1
 				adder += ",".join(types2)
 				adder += "]]"
 				ms.append(adder)
@@ -36,8 +40,8 @@ monster_string = "var MONSTERS = [" + ", ".join(ms) + "];\n" + "var ALLTYPES = [
 
 
 
-for m in ms:
-	print(m)
+for t in typescount:
+	print(t+": "+str(typescount[t]))
 
 
 with open('monsters.js', 'w') as f:
