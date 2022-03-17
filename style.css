@@ -38,19 +38,21 @@ h3 {
 	/*padding-right: 30px;*/
 	/*min-width: 20%;
 	max-width: 25%;*/
-	/*width: fit-content;*/
-	max-width: 40%;
-	 position: relative;
+	width: fit-content;
+	/*max-width: 25%;*/
+	 /*position: relative;*/
     /* center the element */
     right: 0;
     left: 0;
     margin-right: auto;
     margin-left: auto;
-    display: flex;
+    /*display: flex;
     flex-wrap: wrap;
-    /*text-align: center;*/
-    /*align-items: center;*/
-    justify-content: center;
+    flex-basis: 10px;
+    flex-shrink: 1;*/
+    /*flex-direction: row;*/
+    /*justify-content: center;*/
+    text-align: center;
 }
 
 #maincont{
@@ -106,16 +108,43 @@ h3 {
 
 .break{
 	flex-basis: 100%;
+	/*max-width: 30%;*/
 	border-top: 2px solid #000;
+	/*padding-top: 2px;*/
+	/*padding-bott*/
 	/*height: 2px;*/
 }
 
 .checky{
+	display: inline;
 	margin-top: 7px;
 }
 
 label{
+	display: inline;
 	font-size:  15px;
 	font-family:  "Courier New";
 	padding: 5px;
+}
+
+#wheel{
+	position: relative;
+	right: 0;
+	left: 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.spinning {
+    -webkit-animation: rotation 1s infinite linear;
+}
+  
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+  
+    to {
+        -webkit-transform: rotate(359deg);
+    }
 }

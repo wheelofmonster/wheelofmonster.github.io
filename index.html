@@ -22,7 +22,7 @@
 </div>
 <br/>
 <br/>
-<div class="container" id="checkcont">
+<div id="checkcont">
 
 	</div>
 <br/>
@@ -34,6 +34,10 @@ Monster
 	<div id="type">
 		Type
 	</div>
+</div>
+<br/>
+<div class="container">
+<img src="wheel.png" id="wheel" height="300" weight="300">
 </div>
 
 	<script>
@@ -128,14 +132,21 @@ $('#button').click(function(){
 	BuildMonsters();
 	$('#monster').css({"background-color": "#FFF", "font-weight": "normal"});
 
-const interv = setInterval(function() {
-    randomize();
-    blinkcount+=BLINK_INTERVAL;
-    if(blinkcount>BLINK_CAP){
-    	clearInterval(interv);
-    	final_choice();
-    } 
-}, BLINK_INTERVAL);
+	$("#wheel").addClass("spinning");
+	$("#wheel").animate({
+	    left: '0px'
+	}, BLINK_CAP, function () {
+	    $(this).removeClass("spinning");
+	});
+
+	const interv = setInterval(function() {
+	    randomize();
+	    blinkcount+=BLINK_INTERVAL;
+	    if(blinkcount>BLINK_CAP){
+	    	clearInterval(interv);
+	    	final_choice();
+	    } 
+	}, BLINK_INTERVAL);
 });
 
 	</script>
