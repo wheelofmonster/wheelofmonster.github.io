@@ -52,7 +52,9 @@ $(document).ready(function(){
 	            value: t,
 	            type: 'checkbox',
 	            checked: true
-	        })).append(document.createElement('hr'));
+	        }));
+        if (at!=ALLTYPES.length-1)
+        	$('#checkcont').append($(document.createElement('div')).prop("class","verticalLine"));
         // console.log(t)
     }
 });
