@@ -124,13 +124,16 @@ function final_choice(){
 	var m = GetRandom();
 	$('#monster').html(m[0]);
 	$('#type').html(m[1].join(", "));
-	$('#monster').css({"background-color": "#FFFF00", "font-weight": "bold"});
+	$('#monster').addClass('result');
 	blinkcount = 0;
 }
 
 $('#button').click(function(){
+	
 	BuildMonsters();
-	$('#monster').css({"background-color": "#FFF", "font-weight": "normal"});
+	$('#monster').removeClass('result');
+
+	// $('#monster').addClass('red');
 
 	$("#wheel").addClass("spinning");
 	$("#wheel").animate({
@@ -142,8 +145,14 @@ $('#button').click(function(){
 	const interv = setInterval(function() {
 	    randomize();
 	    blinkcount+=BLINK_INTERVAL;
+	    if($('#monster').hasClass('red')){
+	    	$('#monster').removeClass('red').addClass('black');
+	    }else{
+	    	$('#monster').removeClass('black').addClass('red');
+	    }
 	    if(blinkcount>BLINK_CAP){
 	    	clearInterval(interv);
+	    	// $('#monster').removeClass('black').removeClass('red');
 	    	final_choice();
 	    } 
 	}, BLINK_INTERVAL);

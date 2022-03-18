@@ -148,3 +148,27 @@ label{
         -webkit-transform: rotate(359deg);
     }
 }
+
+
+
+.black{
+	background-color: #000;
+	color: #FFF;
+}
+
+.red{
+	background-color: #F00;
+}
+
+.result{
+	/*background-color: #FF0;*/
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
