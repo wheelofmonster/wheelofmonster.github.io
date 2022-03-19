@@ -1,5 +1,5 @@
 name,type
-Frankenstein,Book/Movie
+Frankenstein's Monster,Book/Movie
 Dracula,Book/Movie
 Mummy,Movie
 Invisible Man,Book/Movie
@@ -326,7 +326,7 @@ The Green Slime,Movie
 The Dunwich Horror,Book/Movie
 Shoggoth,Book/Movie
 Cthulhu,Book/Movie
-Dagon,Book/Movie
+Dagon,Book/Movie/Folklore
 Trog,Movie
 Zaat,Movie
 Octaman,Movie
@@ -502,3 +502,36 @@ Gymaira (Ultraman),Movie
 Woo (Ultraman),Movie
 Zaragas (Ultraman),Movie
 Skydon (Ultraman),Movie
+Succubus/Incubus,Folklore
+Wookiee,Movie
+Orcs,General
+Harpy,Folklore
+The Monsters from The Mist,Movie/Book
+Rancor (Star Wars),Movie
+Sarlacc,Movie
+Thunderbird,Folklore
+Jabba the Hutt,Folklore
+Fomorians,Folklore
+Scylla and Charybdis,Folklore
+Namazu,Folklore
+Mares of Diomedes,Folklore
+Odontotyrannos,Folklore
+Cow Spawn (Isolation),Movie
+The Grabbers from Grabbers,Movie
+The Faeries from The Hallow,Movie
+Grimace (McDonalds),Folklore
+Torok the Troll (Troll),Movie
+Hector (Saturn 3),Movie
+Mahars (At the Earth's Core),Movie
+Alien (The Faculty),Movie
+Anaconda,Real/Movie
+The Aliens from Monsters,Movie
+Metaluna Mutant (This Island Earth),Movie
+Monster Zero (Godzilla Final Wars),Movie
+The Id Monster (Forbidden Planet),Movie
+Lionel's Mother (Braindead/Dead Alive),Movie
+Davy Jones (Pirates of the Caribbean),Movie
+Sandown Clown,Cryptid
+Godrick the Grafted,VideoGame
+Rykard Lord of Blasphemy,VideoGame
+Starscourge Radahn,VideoGame
